@@ -43,12 +43,12 @@ const Home: NextPage<Location> & PageAuth & PageSceneScale = ({ country, region 
             <div className='w-screen h-screen flex justify-center items-center bg-color-home'>
                 <Sidebar />
                 <Scene
+                     //Make the area of the checkAreaList  a little small and have the yomo-next-cursor-chat iframe src 
                     className='w-1800px min-w-1800px h-900px wall'
                     floor='home'
                     backgroundImage='/bg-home.png'
                     boundary={{ top: 0, left: 0, bottom: 900, right: 1000 }}
                     playerInitialPosition={{ x: 30, y: 60 }}
-                    //Make the area of the scene to be a little small and have the next-cursor-chat iframe 
                     checkAreaList={[
                         {
                             id: 'area-1',
