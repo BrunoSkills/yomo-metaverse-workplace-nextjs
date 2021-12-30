@@ -5,17 +5,19 @@ const Drawer = ({
     isOpen,
     onClose,
     children,
+    
 }: {
     isOpen: boolean
     onClose: () => void
     children: JSX.Element
 }) => {
     useEffect(() => {
-        if (isOpen) {
+        if (isOpen  ) {
             document.body.setAttribute('style', 'overflow: hidden')
         } else {
             document.body.setAttribute('style', 'overflow: auto')
         }
+
     }, [isOpen])
 
     const closeDrawer = useCallback(e => {
@@ -27,11 +29,11 @@ const Drawer = ({
     return (
         <div
             className={S.mask}
-            style={{ visibility: isOpen ? 'visible' : 'hidden' }}
+            style={{ visibility: isOpen  ? 'visible' : 'hidden' }}
             onClick={closeDrawer}
         >
             <div
-                className={`${S.container} ${isOpen ? S.open : ''}`}
+                className={`${S.container} ${isOpen  ? S.open : ''}`}
                 onClick={e => {
                     e.stopPropagation()
                 }}

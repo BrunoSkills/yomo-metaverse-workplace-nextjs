@@ -14,6 +14,7 @@ export interface Area {
         diameter: number
     }
     iframeSrc: string
+    // openByKeyCode: string
     entered?: boolean
 }
 
@@ -62,3 +63,4 @@ export type TrackMapValue = {
     videoTrack: IRemoteVideoTrack | null
     audioTrack: IRemoteAudioTrack | null
 }
+
