@@ -8,6 +8,7 @@ const IframePage = () => {
     const [IframePage, setIframePageState] = useRecoilState(iframePageState)
 
     //Setting up a function to open/close the drawer with keycodes
+    //Key C and/or control ( ctrl) opens the iframeSrc and esc closes it.
     const onKeyDown  = useCallback(
         ( e: KeyboardEvent) => {
             if(e.key === 'Escape'){
