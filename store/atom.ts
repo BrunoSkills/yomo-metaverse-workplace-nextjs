@@ -2,13 +2,16 @@ import { atom } from 'recoil'
 
 import type { Mate, TrackMapValue, Position } from '../types'
 
+
+//Make a new atom for each track  and make sure not to duplcate keys
+
 export const smallDeviceState = atom({
-    key: 'smallDeviceState',
+    key: 'small_device_state',
     default: false,
 })
 
 export const scaleState = atom({
-    key: 'scaleState',
+    key: 'scale_state',
     default: {
         className: 'scene-scale-100',
         value: 1,
@@ -16,7 +19,7 @@ export const scaleState = atom({
 })
 
 export const onlineState = atom({
-    key: 'onlineState',
+    key: 'online_state',
     default: false,
 })
 
@@ -26,7 +29,7 @@ export const mutedState = atom({
 })
 
 export const locationState = atom({
-    key: 'locationState',
+    key: 'location_state',
     default: {
         country: '',
         region: '',
@@ -34,7 +37,7 @@ export const locationState = atom({
 })
 
 export const meState = atom({
-    key: 'meState',
+    key: 'me_state',
     default: {
         name: '',
         image: '',
@@ -42,17 +45,17 @@ export const meState = atom({
 })
 
 export const mateMapState = atom({
-    key: 'mateMapState',
+    key: 'mate_map_state',
     default: new Map<string, Mate>(),
 })
 
 export const trackMapState = atom({
-    key: 'trackMapState',
+    key: 'track_map_state',
     default: new Map<string, TrackMapValue>(),
 })
 
 export const mePositionState = atom({
-    key: 'mePositionState',
+    key: 'me_position_state',
     default: {
         x: 0,
         y: 0,
@@ -60,12 +63,12 @@ export const mePositionState = atom({
 })
 
 export const matePositionMapState = atom({
-    key: 'matePositionMapState',
+    key: 'mate_position_map_state',
     default: new Map<string, Position>(),
 })
 
 export const iframePageState = atom({
-    key: 'iframePageState',
+    key: 'iframe_page_state',
     default: {
         isOpen: false,
         iframeSrc: '',
