@@ -31,6 +31,7 @@ const Home: NextPage<Location> & PageAuth & PageSceneScale = ({ country, region 
     useEffect(() => {
         setLocationState({ country, region })
     }, [])
+  
 
     return (
         <>
@@ -45,8 +46,9 @@ const Home: NextPage<Location> & PageAuth & PageSceneScale = ({ country, region 
                     className='w-1800px min-w-1800px h-900px wall'
                     floor='home'
                     backgroundImage='/bg-home.png'
-                    boundary={{ top: 0, left: 0, bottom: 900, right: 1800 }}
+                    boundary={{ top: 0, left: 0, bottom: 900, right: 1000 }}
                     playerInitialPosition={{ x: 30, y: 60 }}
+                    //Make the area of the scene to be a little small and have the next-cursor-chat iframe 
                     checkAreaList={[
                         {
                             id: 'area-1',
@@ -55,10 +57,10 @@ const Home: NextPage<Location> & PageAuth & PageSceneScale = ({ country, region 
                                 y: 630,
                             },
                             rectangle: {
-                                width: 200,
-                                height: 200,
+                                width: 180,
+                                height: 180,
                             },
-                            iframeSrc: 'https://github.com/yomorun/yomo',
+                            iframeSrc: 'https://yomo-next-cursor-chat-app.vercel.app/',
                         },
                         {
                             id: 'area-2',
@@ -67,9 +69,9 @@ const Home: NextPage<Location> & PageAuth & PageSceneScale = ({ country, region 
                                 y: 80,
                             },
                             round: {
-                                diameter: 200,
+                                diameter: 180,
                             },
-                            iframeSrc: 'https://yomo.run',
+                            iframeSrc: 'https://yomo-next-cursor-chat-app.vercel.app/',
                         },
                     ]}
                     onEnterCheckArea={(area: Area) => {
@@ -77,6 +79,7 @@ const Home: NextPage<Location> & PageAuth & PageSceneScale = ({ country, region 
                         setIframePageState({
                             isOpen: true,
                             iframeSrc: area.iframeSrc,
+                            // evt: string
                         })
                     }}
                     onLeaveCheckArea={() => {
@@ -84,10 +87,12 @@ const Home: NextPage<Location> & PageAuth & PageSceneScale = ({ country, region 
                         setIframePageState({
                             isOpen: false,
                             iframeSrc: '',
+                            // evt:string
                         })
                     }}
                 />
                 <FloorLinks currentPath='/' />
+               
                 <Guide />
                 <IframePage />
             </div>
